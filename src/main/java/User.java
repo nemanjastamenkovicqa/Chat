@@ -1,5 +1,6 @@
 public class User {
     private String username;
+    private PrivateMessageService privateMessageService;
     private ChatRoom chatRoom;
 
     public User(String username) {
@@ -13,6 +14,19 @@ public class User {
     public void setChatRoom(ChatRoom chatRoom) {
         this.chatRoom = chatRoom;
     }
+    public void setPrivateMessageService(PrivateMessageService privateMessageService) {
+        this.privateMessageService = privateMessageService;
+    }
+    public void sendPrivateMessage(User recipient, String message) {
+        if (privateMessageService != null) {
+            privateMessageService.sendPrivateMessage(this, recipient, message);
+        }
+    }
+
+    public void receivePrivateMessage(String message, User sender) {
+        System.out.println(username + " receives private message: " + message + " from " + sender.getUsername());
+    }
+
 
     public void sendMessage(String message, User recipient) {
         System.out.println(username + " sends message: " + message + " to " + recipient.getUsername());
