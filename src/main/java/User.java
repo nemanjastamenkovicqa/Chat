@@ -2,6 +2,8 @@ public class User {
     private String username;
     private PrivateMessageService privateMessageService;
     private ChatRoom chatRoom;
+    private PermissionManager permissionManager;
+
 
     public User(String username) {
         this.username = username;
@@ -21,6 +23,9 @@ public class User {
         if (privateMessageService != null) {
             privateMessageService.sendPrivateMessage(this, recipient, message);
         }
+    }
+    public void setPermissionManager(PermissionManager permissionManager) {
+        this.permissionManager = permissionManager;
     }
 
     public void receivePrivateMessage(String message, User sender) {
@@ -43,5 +48,11 @@ public class User {
         } else {
             System.out.println(username + " receives broadcast message: " + message);
         }
+    }
+    public String getPermission() {
+        if (permissionManager != null) {
+            return permissionManager.getUserPermission(this);
+        }
+        return "DEFAULT";
     }
 }
