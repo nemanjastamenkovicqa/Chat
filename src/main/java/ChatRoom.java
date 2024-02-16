@@ -16,8 +16,8 @@ public class ChatRoom {
         participants.remove(user);
     }
 
-    public void clearParticipants() {
-        participants.clear();
+    public boolean isParticipant(User user) {
+        return participants.contains(user);
     }
 
     public void broadcastMessage(String message) {
