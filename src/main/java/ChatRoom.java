@@ -16,6 +16,10 @@ public class ChatRoom {
         participants.remove(user);
     }
 
+    public void clearParticipants() {
+        participants.clear();
+    }
+
     public void broadcastMessage(String message) {
         for (User participant : participants) {
             participant.receiveMessage(message, null);
