@@ -15,4 +15,9 @@ public class PermissionManager {
     public String getUserPermission(User user) {
         return userPermissions.getOrDefault(user, "DEFAULT");
     }
+
+    public boolean hasPermission(User user, String permission) {
+        String userPermission = getUserPermission(user);
+        return userPermission.equals(permission);
+    }
 }
