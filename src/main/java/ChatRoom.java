@@ -25,4 +25,10 @@ public class ChatRoom {
             participant.receiveMessage(message, null);
         }
     }
+
+    public void sendMessageToParticipant(String message, User recipient) {
+        if (isParticipant(recipient)) {
+            recipient.receiveMessage(message, null);
+        }
+    }
 }
