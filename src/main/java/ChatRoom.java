@@ -35,7 +35,7 @@ public class ChatRoom {
             chatHistory.add(message);
         }
     }
-
+    //Clear chat
     public void clearChatHistory() {
         chatHistory.clear();
     }
