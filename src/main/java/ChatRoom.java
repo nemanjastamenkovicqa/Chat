@@ -3,9 +3,11 @@ import java.util.List;
 
 public class ChatRoom {
     private List<User> participants;
+    private List<String> chatHistory;
 
     public ChatRoom() {
         this.participants = new ArrayList<>();
+        this.chatHistory = new ArrayList<>();
     }
 
     public void addParticipant(User user) {
@@ -23,12 +25,18 @@ public class ChatRoom {
     public void broadcastMessage(String message) {
         for (User participant : participants) {
             participant.receiveMessage(message, null);
+            chatHistory.add(message);
         }
     }
 
     public void sendMessageToParticipant(String message, User recipient) {
         if (isParticipant(recipient)) {
             recipient.receiveMessage(message, null);
+            chatHistory.add(message);
         }
+    }
+
+    public void clearChatHistory() {
+        chatHistory.clear();
     }
 }
