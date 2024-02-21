@@ -16,4 +16,11 @@ public class PrivateMessageService {
     public User getSender(User recipient) {
         return privateMessageMap.get(recipient);
     }
+
+    public String getPrivateMessage(User sender, User recipient) {
+        if (privateMessageMap.containsKey(recipient) && privateMessageMap.get(recipient).equals(sender)) {
+            return "You have a private message from " + sender.getUsername();
+        }
+        return "No private message from " + sender.getUsername();
+    }
 }
