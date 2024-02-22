@@ -23,4 +23,8 @@ public class PrivateMessageService {
         }
         return "No private message from " + sender.getUsername();
     }
+
+    public void clearPrivateMessages() {
+        privateMessageMap.clear();
+    }
 }
