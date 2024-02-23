@@ -27,4 +27,13 @@ public class PrivateMessageService {
     public void clearPrivateMessages() {
         privateMessageMap.clear();
     }
+
+    public boolean hasUnreadMessages(User user) {
+        for (Map.Entry<User, User> entry : privateMessageMap.entrySet()) {
+            if (entry.getKey().equals(user)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
