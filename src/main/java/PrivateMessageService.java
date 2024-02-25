@@ -29,11 +29,10 @@ public class PrivateMessageService {
     }
 
     public boolean hasUnreadMessages(User user) {
-        for (Map.Entry<User, User> entry : privateMessageMap.entrySet()) {
-            if (entry.getKey().equals(user)) {
-                return true;
-            }
-        }
-        return false;
+        return privateMessageMap.containsKey(user);
+    }
+
+    public void deletePrivateMessage(User sender, User recipient) {
+        privateMessageMap.remove(recipient, sender);
     }
 }
