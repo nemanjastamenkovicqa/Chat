@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PrivateMessageService {
@@ -34,5 +36,15 @@ public class PrivateMessageService {
 
     public void deletePrivateMessage(User sender, User recipient) {
         privateMessageMap.remove(recipient, sender);
+    }
+
+    public List<String> getPrivateMessages(User user) {
+        List<String> userMessages = new ArrayList<>();
+        for (Map.Entry<User, User> entry : privateMessageMap.entrySet()) {
+            if (entry.getKey().equals(user)) {
+                userMessages.add("You have a private message from " + entry.getValue().getUsername());
+            }
+        }
+        return userMessages;
     }
 }
