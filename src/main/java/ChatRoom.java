@@ -35,7 +35,11 @@ public class ChatRoom {
             chatHistory.add(message);
         }
     }
-    //Clear chat
+
+    public List<String> getChatHistory() {
+        return chatHistory;
+    }
+
     public void clearChatHistory() {
         chatHistory.clear();
     }
