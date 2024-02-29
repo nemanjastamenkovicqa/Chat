@@ -47,4 +47,14 @@ public class PrivateMessageService {
         }
         return userMessages;
     }
+
+    public List<String> getSentMessages(User user) {
+        List<String> sentMessages = new ArrayList<>();
+        for (Map.Entry<User, User> entry : privateMessageMap.entrySet()) {
+            if (entry.getValue().equals(user)) {
+                sentMessages.add("You sent a private message to " + entry.getKey().getUsername());
+            }
+        }
+        return sentMessages;
+    }
 }
