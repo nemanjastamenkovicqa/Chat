@@ -61,4 +61,14 @@ public class PrivateMessageService {
     public int getTotalPrivateMessages() {
         return privateMessageMap.size();
     }
+
+    public int getUnreadMessageCount(User user) {
+        int count = 0;
+        for (Map.Entry<User, User> entry : privateMessageMap.entrySet()) {
+            if (entry.getKey().equals(user)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
