@@ -57,4 +57,8 @@ public class PrivateMessageService {
         }
         return sentMessages;
     }
+
+    public int getTotalPrivateMessages() {
+        return privateMessageMap.size();
+    }
 }
