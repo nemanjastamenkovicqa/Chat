@@ -43,4 +43,8 @@ public class ChatRoom {
     public void clearChatHistory() {
         chatHistory.clear();
     }
+
+    public int getTotalMessagesSent() {
+        return chatHistory.size();
+    }
 }
