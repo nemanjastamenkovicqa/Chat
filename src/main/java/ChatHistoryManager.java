@@ -15,4 +15,8 @@ public class ChatHistoryManager {
     public List<String> getMessageHistory() {
         return messageHistory;
     }
+
+    public int getTotalMessages() {
+        return messageHistory.size();
+    }
 }

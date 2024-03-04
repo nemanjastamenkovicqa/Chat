@@ -47,4 +47,5 @@ public class ChatRoom {
     public int getTotalMessagesSent() {
         return chatHistory.size();
     }
+
 }
