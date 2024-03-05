@@ -19,4 +19,8 @@ public class ChatHistoryManager {
     public int getTotalMessages() {
         return messageHistory.size();
     }
+
+    public void clearMessageHistory() {
+        messageHistory.clear();
+    }
 }
