@@ -23,4 +23,9 @@ public class ChatHistoryManager {
     public void clearMessageHistory() {
         messageHistory.clear();
     }
+
+    public List<String> getLastMessages(int n) {
+        int startIndex = Math.max(0, messageHistory.size() - n);
+        return messageHistory.subList(startIndex, messageHistory.size());
+    }
 }
