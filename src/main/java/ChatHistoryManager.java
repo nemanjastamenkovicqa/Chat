@@ -38,4 +38,14 @@ public class ChatHistoryManager {
         }
         return userMessages;
     }
+
+    public List<String> getMessagesContainingKeyword(String keyword) {
+        List<String> keywordMessages = new ArrayList<>();
+        for (String message : messageHistory) {
+            if (message.contains(keyword)) {
+                keywordMessages.add(message);
+            }
+        }
+        return keywordMessages;
+    }
 }
