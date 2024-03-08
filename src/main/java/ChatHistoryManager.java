@@ -28,4 +28,14 @@ public class ChatHistoryManager {
         int startIndex = Math.max(0, messageHistory.size() - n);
         return messageHistory.subList(startIndex, messageHistory.size());
     }
+
+    public List<String> getMessagesByUser(String username) {
+        List<String> userMessages = new ArrayList<>();
+        for (String message : messageHistory) {
+            if (message.contains(username)) {
+                userMessages.add(message);
+            }
+        }
+        return userMessages;
+    }
 }
