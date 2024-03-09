@@ -48,4 +48,14 @@ public class ChatHistoryManager {
         }
         return keywordMessages;
     }
+
+    public int countKeywordOccurrences(String keyword) {
+        int count = 0;
+        for (String message : messageHistory) {
+            if (message.contains(keyword)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
