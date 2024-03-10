@@ -64,4 +64,13 @@ public class User {
         }
         return false;
     }
+
+    public int getReceivedMessagesCount() {
+        if (privateMessageService != null) {
+            // Implement logic to count received messages
+            // For now, return a placeholder value
+            return 0;
+        }
+        return 0;
+    }
 }
