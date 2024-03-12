@@ -58,6 +58,7 @@ public class ChatHistoryManager {
         }
         return count;
     }
+
     public int getMessagesSentByUser(String username) {
         int count = 0;
         for (String message : messageHistory) {
