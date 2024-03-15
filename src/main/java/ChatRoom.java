@@ -48,4 +48,7 @@ public class ChatRoom {
         return chatHistory.size();
     }
 
+    public int getParticipantCount() {
+        return participants.size();
+    }
 }
