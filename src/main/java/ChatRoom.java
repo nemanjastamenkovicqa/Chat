@@ -51,4 +51,8 @@ public class ChatRoom {
     public int getParticipantCount() {
         return participants.size();
     }
+
+    public List<User> getParticipants() {
+        return participants;
+    }
 }
