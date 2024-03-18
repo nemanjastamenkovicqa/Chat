@@ -55,4 +55,8 @@ public class ChatRoom {
     public List<User> getParticipants() {
         return participants;
     }
+
+    public boolean isChatEmpty() {
+        return chatHistory.isEmpty();
+    }
 }
