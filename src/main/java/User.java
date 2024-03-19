@@ -73,4 +73,10 @@ public class User {
         }
         return 0;
     }
+    public int getUnreadMessagesCount() {
+        if (privateMessageService != null) {
+            return privateMessageService.getUnreadMessagesCount(this);
+        }
+        return 0;
+    }
 }

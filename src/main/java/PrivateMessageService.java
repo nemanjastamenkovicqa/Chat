@@ -71,4 +71,8 @@ public class PrivateMessageService {
         }
         return count;
     }
+
+    public int getUnreadMessagesCount(User user) {
+        return getUnreadMessageCount(user);
+    }
 }
