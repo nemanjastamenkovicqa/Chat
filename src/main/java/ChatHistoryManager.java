@@ -77,5 +77,15 @@ public class ChatHistoryManager {
         }
         return count;
     }
+    public List<String> getMessagesSentToUser(String username) {
+        List<String> sentToUserMessages = new ArrayList<>();
+        for (String message : messageHistory) {
+            if (message.contains(username) && !message.startsWith(username)) {
+                sentToUserMessages.add(message);
+            }
+        }
+        return sentToUserMessages;
+    }
+
 
 }
