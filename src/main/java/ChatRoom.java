@@ -59,4 +59,14 @@ public class ChatRoom {
     public boolean isChatEmpty() {
         return chatHistory.isEmpty();
     }
+    public int getUnreadMessageCount(User user) {
+        int unreadCount = 0;
+        for (String message : chatHistory) {
+            if (message.startsWith(user.getUsername()) && !message.contains(user.getUsername())) {
+                unreadCount++;
+            }
+        }
+        return unreadCount;
+    }
+
 }
