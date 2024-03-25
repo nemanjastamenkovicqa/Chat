@@ -68,5 +68,9 @@ public class ChatRoom {
         }
         return unreadCount;
     }
+    public int getTotalParticipants() {
+        return participants.size();
+    }
+
 
 }
