@@ -81,6 +81,17 @@ public class ChatRoom {
         return unreadCount;
     }
 
+    public int getParticipantUnreadMessageCount(User participant) {
+        int unreadCount = 0;
+        for (String message : chatHistory) {
+            if (message.startsWith(participant.getUsername()) && !message.contains(participant.getUsername())) {
+                unreadCount++;
+            }
+        }
+        return unreadCount;
+    }
+
+
 
 
 }
