@@ -68,6 +68,7 @@ public class ChatHistoryManager {
         }
         return count;
     }
+
     public int getMessagesReceivedByUser(String username) {
         int count = 0;
         for (String message : messageHistory) {
@@ -77,6 +78,7 @@ public class ChatHistoryManager {
         }
         return count;
     }
+
     public List<String> getMessagesSentToUser(String username) {
         List<String> sentToUserMessages = new ArrayList<>();
         for (String message : messageHistory) {
@@ -87,5 +89,12 @@ public class ChatHistoryManager {
         return sentToUserMessages;
     }
 
-
+    public boolean hasUserInteractedWith(String username) {
+        for (String message : messageHistory) {
+            if (message.contains(username)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
