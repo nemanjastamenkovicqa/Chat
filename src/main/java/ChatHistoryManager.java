@@ -97,4 +97,15 @@ public class ChatHistoryManager {
         }
         return false;
     }
+
+    public int getMessagesSentToUserCount(String username) {
+        int count = 0;
+        for (String message : messageHistory) {
+            if (message.contains(username) && !message.startsWith(username)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
 }
