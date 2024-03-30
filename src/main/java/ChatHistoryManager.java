@@ -108,4 +108,18 @@ public class ChatHistoryManager {
         return count;
     }
 
+    public int countMessagesContainingEmoji() {
+        int count = 0;
+        for (String message : messageHistory) {
+            if (containsEmoji(message)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private boolean containsEmoji(String message) {
+        return message.contains("😊") || message.contains("❤️") || message.contains("😃");
+    }
+
 }
