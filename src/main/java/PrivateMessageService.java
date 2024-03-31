@@ -85,4 +85,25 @@ public class PrivateMessageService {
         }
         return count;
     }
+    public int countMessagesWithEmojis() {
+        int count = 0;
+        for (User message : privateMessageMap.keySet()) {
+            if (containsEmoji(String.valueOf(message))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private boolean containsEmoji(String message) {
+        int count = 0;
+        for (int i = 0; i < message.length(); i++) {
+            int type = Character.getType(message.charAt(i));
+            if (type == Character.SURROGATE || type == Character.OTHER_SYMBOL) {
+                count++;
+            }
+        }
+        return count > 0;
+    }
+
 }
