@@ -79,4 +79,8 @@ public class User {
         }
         return 0;
     }
+    public boolean hasSentMessages() {
+        return privateMessageService != null && privateMessageService.getTotalSentMessages(this) > 0;
+    }
+
 }
