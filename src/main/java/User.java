@@ -82,5 +82,11 @@ public class User {
     public boolean hasSentMessages() {
         return privateMessageService != null && privateMessageService.getTotalSentMessages(this) > 0;
     }
+    public int getTotalSentMessages() {
+        if (privateMessageService != null) {
+            return privateMessageService.getTotalSentMessages(this);
+        }
+        return 0;
+    }
 
 }
