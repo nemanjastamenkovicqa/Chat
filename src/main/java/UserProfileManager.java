@@ -29,4 +29,6 @@ class UserProfile {
     }
 
     // Getter and setter methods for displayName, bio, and profilePicture
+
+    // Message resend method
 }
