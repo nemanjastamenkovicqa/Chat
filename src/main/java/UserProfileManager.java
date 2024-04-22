@@ -15,6 +15,14 @@ public class UserProfileManager {
     public UserProfile getUserProfile(User user) {
         return userProfileMap.getOrDefault(user, new UserProfile("Default", "", ""));
     }
+
+    public boolean isProfileComplete(User user) {
+        UserProfile profile = userProfileMap.get(user);
+        if (profile != null) {
+            return !profile.getDisplayName().isEmpty() && !profile.getBio().isEmpty() && !profile.getProfilePicture().isEmpty();
+        }
+        return false;
+    }
 }
 
 class UserProfile {
@@ -28,7 +36,27 @@ class UserProfile {
         this.profilePicture = profilePicture;
     }
 
-    // Getter and setter methods for displayName, bio, and profilePicture
+    public String getDisplayName() {
+        return displayName;
+    }
 
-    // Message resend method
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
 }
