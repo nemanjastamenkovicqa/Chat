@@ -20,4 +20,13 @@ public class PermissionManager {
         String userPermission = getUserPermission(user);
         return userPermission.equals(permission);
     }
+    public boolean hasAnyUserWithPermission(String permission) {
+        for (String perm : userPermissions.values()) {
+            if (perm.equals(permission)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
 }
