@@ -28,5 +28,9 @@ public class PermissionManager {
         }
         return false;
     }
+
+    public void removeUserPermission(User user) {
+        userPermissions.remove(user);
+    }
     
 }
