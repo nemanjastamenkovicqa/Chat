@@ -22,15 +22,21 @@ public class NotificationManager {
         }
         return userNotifications;
     }
+
+    public void markAsRead(Notification notification) {
+        notification.markAsRead();
+    }
 }
 
 class Notification {
     private User recipient;
     private String message;
+    private boolean read;
 
     public Notification(User recipient, String message) {
         this.recipient = recipient;
         this.message = message;
+        this.read = false;
     }
 
     public User getRecipient() {
@@ -39,5 +45,13 @@ class Notification {
 
     public String getMessage() {
         return message;
+    }
+
+    public boolean isRead() {
+        return read;
+    }
+
+    public void markAsRead() {
+        this.read = true;
     }
 }
