@@ -122,4 +122,15 @@ public class ChatHistoryManager {
         return message.contains("😊") || message.contains("❤️") || message.contains("😃");
     }
 
+    public List<String> getMessagesSentByUserContainingKeyword(String username, String keyword) {
+    List<String> userMessagesContainingKeyword = new ArrayList<>();
+    for (String message : messageHistory) {
+        if (message.startsWith(username) && message.contains(keyword)) {
+            userMessagesContainingKeyword.add(message);
+        }
+    }
+    return userMessagesContainingKeyword;
+}
+
+
 }
