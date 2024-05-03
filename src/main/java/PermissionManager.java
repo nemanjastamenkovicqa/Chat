@@ -32,5 +32,10 @@ public class PermissionManager {
     public void removeUserPermission(User user) {
         userPermissions.remove(user);
     }
+
+    public boolean hasUser(User user) {
+    return userPermissions.containsKey(user);
+}
+
     
 }
