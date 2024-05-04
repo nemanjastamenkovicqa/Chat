@@ -106,4 +106,19 @@ public class PrivateMessageService {
         return count > 0;
     }
 
+    public List<String> getPrivateMessagesWithEmojis(User user) {
+    List<String> messagesWithEmojis = new ArrayList<>();
+    for (Map.Entry<User, User> entry : privateMessageMap.entrySet()) {
+        User recipient = entry.getKey();
+        User sender = entry.getValue();
+        if (recipient.equals(user) || sender.equals(user)) {
+            String message = recipient.equals(user) ? "You have a private message from " + sender.getUsername() : "You sent a private message to " + recipient.getUsername();
+            if (containsEmoji(message)) {
+                messagesWithEmojis.add(message);
+            }
+        }
+    }
+    return messagesWithEmojis;
+}
+
 }
