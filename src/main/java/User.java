@@ -88,5 +88,14 @@ public class User {
         }
         return 0;
     }
+public void joinChatRoom(ChatRoom room) {
+    if (chatRoom != null) {
+        chatRoom.removeUser(this);
+    }
+    chatRoom = room;
+    if (chatRoom != null) {
+        chatRoom.addUser(this);
+    }
+}
 
 }
